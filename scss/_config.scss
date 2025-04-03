@@ -1,0 +1,47 @@
+$default-font: "Montserrat", serif;
+$primary-background: #205781;
+$header-font-size: 2rem;
+$sub-header-font-size: 2rem;
+$header-margins: 96px;
+$field-background: #98D2C0;
+$form-background: #ffffff;
+$navbar-background:#0e3a5c;
+
+* {
+  box-sizing: border-box;
+  font-family: $default-font;
+  padding: 0;
+  margin: 0;
+  color: #dbd9d9;
+}
+
+@mixin display-flex(
+  $justify-content: flex-start,
+  $align-items: stretch,
+  $flex-direction: row
+) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+  flex-wrap: nowrap;
+}
+@mixin center-div(
+  $max-width: 40%,
+  $min-width: 50%,
+  $margin-up: 0,
+  $margin-sides: 0
+) {
+  margin: $margin-up $margin-sides;
+  max-width: $max-width;
+  min-width: $min-width;
+}
+@mixin btn-style {
+  max-width: fit-content;
+  min-width: fit-content;
+}
+@mixin hover-effect {
+  cursor: pointer;
+  transition: all ease 0.25s;
+  color: orange;
+}
