@@ -3,7 +3,7 @@ import AboutSection from "./AboutSection"
 import WelcomeSection from "./WelcomeSection";
 import SideBar from "./SideBar";
 import ContactSection from "./ContactSection";
-import Footer from "./footer";
+import Footer from "./Footer";
 function Body() {
   return (
     <>
