@@ -161,7 +161,8 @@ a {
   padding: 0.5rem;
   margin: 1rem;
   border-radius: 0.5rem;
-  background-color: rgb(252, 218, 157);
+  background-color: rgb(124, 189, 250);
+  color: black;
 }
 .main-section .side-bar {
   position: absolute;
