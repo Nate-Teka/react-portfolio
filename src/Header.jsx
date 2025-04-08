@@ -1,4 +1,6 @@
-
+const pixelRatio = ()=>{
+    alert(window.devicePixelRatio);
+}
 function Header() {
     return (
         <>
@@ -8,7 +10,7 @@ function Header() {
                           <div className="navbar__user-info__container__img-container">
                           <img src="/placeholder.jpg" alt="Profile picture"/>
                         </div>
-                        <p className="navbar__user-info__container__name">Nathaniel Tekalgn</p>
+                        <p className="navbar__user-info__container__name" onClick={pixelRatio}>Nathaniel Tekalgn</p>
                     </div>
                     <ul className="navbar__options">
                         <li className="navbar__item"><a href="#aboutLink" className="navbar__item__link">about</a></li>
