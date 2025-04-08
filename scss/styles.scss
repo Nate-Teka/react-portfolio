@@ -1,7 +1,8 @@
 @use "config";
 
 html {
-  border-image: fill 1 linear-gradient(32deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  border-image: fill 1
+    linear-gradient(32deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
   scroll-behavior: smooth;
 }
 body {
@@ -21,10 +22,16 @@ a {
   top: 0;
   z-index: 1;
   margin: 0 auto;
-  width: 90%;
+  width: 80%;
   @media (max-width: 768px) {
     width: 100%;
     position: inherit;
+    .navbar__container {
+      border-radius: 0;
+    }
+  }
+  @media (max-width: 412px) {
+    width: 100%;
     .navbar__container {
       border-radius: 0;
     }
@@ -57,6 +64,9 @@ a {
     &__link {
       margin: 0 12px;
       transition: all ease-out 0.15s;
+      @media (max-width: 768px) {
+        display: none;
+      }
       &:hover {
         @include config.hover-effect;
       }
@@ -75,24 +85,25 @@ a {
     text-align: center;
     margin: config.$header-margins;
     font-size: config.$header-font-size;
-    @media (min-width: 412px) {
+    @media (max-width: 412px) {
       margin: 96px 0;
     }
   }
   .about-section {
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
     &__header {
       text-align: center;
       font-size: 3rem;
       margin: config.$header-margins - 14px;
-      @media (max-width: 412px) {
-        color: red;
-      }
     }
     &__main-container {
       @include config.display-flex($justify-content: space-between);
-      gap: 15%;
+      column-gap: 15%;
+
       &__origins-text {
         max-width: 700px;
       }
@@ -116,7 +127,26 @@ a {
           }
         }
       }
+      @media (max-width: 624px) {
+        flex-direction: column;
+        row-gap: 15%;
+        .about-section__header{
+          color: red;
+        }
+        h3 {
+          margin: 34px 0;
+        }
+        &__skills-section {
+          &__skills-list {
+            &__item {
+              margin: 0;
+              margin-right: 34px;
+              margin-bottom: 34px;
+            }
+          }
+        }
       }
+    }
   }
   .side-bar {
     @media (max-width: 768px) {
@@ -159,11 +189,10 @@ a {
       background-color: config.$form-background;
       border-radius: 0.3rem;
       padding-top: 3rem;
-      max-width: 800px;
       width: 100%;
       align-self: center;
       @media (max-width: 768px) {
-        width: 95%;
+        width: 90%;
       }
       &__input {
         color: black;
@@ -241,7 +270,7 @@ a {
           margin: 0.5rem 4px;
           transition: all ease 0.25s;
         }
-        .fa-brands:hover{
+        .fa-brands:hover {
           @include config.hover-effect;
         }
       }

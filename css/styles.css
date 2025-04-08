@@ -32,12 +32,20 @@ a {
   top: 0;
   z-index: 1;
   margin: 0 auto;
-  width: 90%;
+  width: 80%;
 }
 @media (max-width: 768px) {
   .navbar {
     width: 100%;
     position: inherit;
+  }
+  .navbar .navbar__container {
+    border-radius: 0;
+  }
+}
+@media (max-width: 412px) {
+  .navbar {
+    width: 100%;
   }
   .navbar .navbar__container {
     border-radius: 0;
@@ -82,6 +90,11 @@ a {
   margin: 0 12px;
   transition: all ease-out 0.15s;
 }
+@media (max-width: 768px) {
+  .navbar__item__link {
+    display: none;
+  }
+}
 .navbar__item__link:hover {
   cursor: pointer;
   transition: all ease 0.25s;
@@ -105,24 +118,24 @@ a {
   margin: 96px;
   font-size: 2rem;
 }
-@media (min-width: 412px) {
+@media (max-width: 412px) {
   .main-section .welcome-section {
     margin: 96px 0;
   }
 }
 .main-section .about-section {
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .main-section .about-section {
+    width: 90%;
+  }
 }
 .main-section .about-section__header {
   text-align: center;
   font-size: 3rem;
   margin: 82px;
-}
-@media (max-width: 412px) {
-  .main-section .about-section__header {
-    color: red;
-  }
 }
 .main-section .about-section__main-container {
   display: flex;
@@ -130,7 +143,8 @@ a {
   align-items: stretch;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: 15%;
+  -moz-column-gap: 15%;
+       column-gap: 15%;
 }
 .main-section .about-section__main-container__origins-text {
   max-width: 700px;
@@ -163,6 +177,23 @@ a {
   border-radius: 0.5rem;
   background-color: rgb(124, 189, 250);
   color: black;
+}
+@media (max-width: 624px) {
+  .main-section .about-section__main-container {
+    flex-direction: column;
+    row-gap: 15%;
+  }
+  .main-section .about-section__main-container .about-section__header {
+    color: red;
+  }
+  .main-section .about-section__main-container h3 {
+    margin: 34px 0;
+  }
+  .main-section .about-section__main-container__skills-section__skills-list__item {
+    margin: 0;
+    margin-right: 34px;
+    margin-bottom: 34px;
+  }
 }
 .main-section .side-bar {
   position: absolute;
@@ -214,13 +245,12 @@ a {
   background-color: #ffffff;
   border-radius: 0.3rem;
   padding-top: 3rem;
-  max-width: 800px;
   width: 100%;
   align-self: center;
 }
 @media (max-width: 768px) {
   .main-section .contact-section__form {
-    width: 95%;
+    width: 90%;
   }
 }
 .main-section .contact-section__form__input {

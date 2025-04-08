@@ -25,28 +25,28 @@ function AboutSection() {
             </h3>
             <ul className="about-section__main-container__skills-section__skills-list">
               <li className="about-section__main-container__skills-section__skills-list__item">
-                HTML
-              </li>
-              <li className="about-section__main-container__skills-section__skills-list__item">
-                CSS
-              </li>
-              <li className="about-section__main-container__skills-section__skills-list__item">
-                JAVA
-              </li>
-              <li className="about-section__main-container__skills-section__skills-list__item">
-                PHP
+                C#
               </li>
               <li className="about-section__main-container__skills-section__skills-list__item">
                 C++
               </li>
               <li className="about-section__main-container__skills-section__skills-list__item">
-                C#
+                CSS
+              </li>
+              <li className="about-section__main-container__skills-section__skills-list__item">
+                Github
+              </li>
+              <li className="about-section__main-container__skills-section__skills-list__item">
+                HTML
+              </li>
+              <li className="about-section__main-container__skills-section__skills-list__item">
+                JAVA
               </li>
               <li className="about-section__main-container__skills-section__skills-list__item">
                 JavaScript
               </li>
               <li className="about-section__main-container__skills-section__skills-list__item">
-                Github
+                PHP
               </li>
               <li className="about-section__main-container__skills-section__skills-list__item">
                 SQL
@@ -58,4 +58,4 @@ function AboutSection() {
     </>
   );
 }
-export default AboutSection
+export default AboutSection;
