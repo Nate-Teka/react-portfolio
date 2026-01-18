@@ -4,7 +4,7 @@ function Header() {
       <nav className="flex justify-between items-center bg-secondary p-4 rounded-b-2xl md:rounded-none">
         <div className="flex items-center gap-4">
           <div className="w-10 h-10">
-            <img src="/" alt="Profile" className="w-full h-full rounded-full" />
+            <img src="" alt="Profile" className="w-full h-full rounded-full" />
           </div>
           <p className="font-bold">Nathaniel Tekalgn</p>
         </div>
