@@ -64,8 +64,9 @@ a {
     &__link {
       margin: 0 12px;
       transition: all ease-out 0.15s;
-      @media (max-width: 768px) {
+      @media (max-width: 624px) {
         display: none;
+        
       }
       &:hover {
         @include config.hover-effect;
@@ -85,24 +86,24 @@ a {
     text-align: center;
     margin: config.$header-margins;
     font-size: config.$header-font-size;
-    @media (max-width: 412px) {
-      margin: 96px 0;
+    @media (max-width: 768px) {
+      margin: 62px 0;
+      padding: 16px;
+      font-size: config.$header-font-size - 0.5rem;
     }
   }
   .about-section {
     margin: 0 auto;
-    width: 100%;
-    @media (max-width: 768px) {
-      width: 90%;
-    }
+    
     &__header {
       text-align: center;
-      font-size: 3rem;
-      margin: config.$header-margins - 14px;
+      font-size: config.$sub-header-font-size + 1rem;
+      margin: config.$header-margins;
+      
     }
     &__main-container {
       @include config.display-flex($justify-content: space-between);
-      column-gap: 15%;
+      column-gap: 25%;
 
       &__origins-text {
         max-width: 700px;
@@ -127,7 +128,7 @@ a {
           }
         }
       }
-      @media (max-width: 624px) {
+      @media (max-width: 768px) {
         flex-direction: column;
         row-gap: 15%;
         .about-section__header{
@@ -146,6 +147,9 @@ a {
           }
         }
       }
+    }
+    @media (max-width: 768px) {
+      width: 90%;
     }
   }
   .side-bar {
