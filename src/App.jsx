@@ -1,4 +1,4 @@
-import "../css/styles.css"
+import "./index.css"
 import Header from "./Header.jsx";
 import Body from "./BodySection.jsx";
 

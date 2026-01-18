@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Resets & Backgrounds from your SCSS */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-primary text-text font-sans;
+    background-image: url("/res/Designer.jpeg");
+    background-size: auto;
+    background-repeat: repeat;
+  }
+  /* Custom scrollbar style from your html border-image logic if needed, 
+     otherwise standard Tailwind resets handle most things. */
+}
