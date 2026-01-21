@@ -1,4 +1,5 @@
-import "./index.css"
+import "tailwindcss";
+import "./index.css";
 import Header from "./Header.jsx";
 import Body from "./BodySection.jsx";
 
