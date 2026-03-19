@@ -1,6 +1,26 @@
 function SideBar() {
   const clickHandler = (e) => {
-    /* Handler logic remains same */
+    const action = e.target.dataset.action;
+    console.log(action);
+    switch (action) {
+      case "gitHub":
+        window.open(`https://github.com/Nate-Teka`, "_blank");
+        break;
+      case "linkedIn":
+        window.open(`https://www.linkedin.com/in/nathaniel-tekalgn-622031366/`, "_blank");
+        break;
+      case "twitter":
+        window.open(`https://x.com/Nate2031`, "_blank");
+        break;
+      case "instagram":
+        window.open(`https://www.instagram.com/itanwgg/`, "_blank");
+        break;
+      
+      default:
+        console.log(action);
+        break;
+    }
+    
   };
 
   return (

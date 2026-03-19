@@ -1,12 +1,12 @@
 function Header() {
   return (
-    <header className="sticky top-0 z-10 mx-auto w-full md:w-[90%] md:static">
-      <nav className="flex justify-between items-center bg-secondary p-4 rounded-b-2xl md:rounded-none">
+    <header className="border-b border-accent rounded-b-2xl bg-secondary mx-auto md:w-[90%] ">
+      <nav className="flex justify-between items-center p-4 rounded-b-2xl md:rounded-none">
         <div className="flex items-center gap-4">
           <div className="w-10 h-10">
-            <img src="" alt="Profile" className="w-full h-full rounded-full" />
+            <img src="./placeholder.jpg" alt="Profile" className="w-full h-full rounded-full"/>
           </div>
-          <p className="font-bold">Nathaniel Tekalgn</p>
+          <p className="font-bold">N.T</p>
         </div>
         <ul className="flex items-center">
           {["about", "projects", "contact me"].map((item) => (

@@ -6,7 +6,7 @@ import Footer from "./footer";
 function Body() {
   return (
     <>
-    <main className="main-section">
+    <main className="main-section mx-auto w-[80%] ">
       <WelcomeSection />
       <AboutSection />
       <SideBar />
