@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  /* Define the custom colors from your config here */
+  --color-primary: #121212;
+  --color-secondary: #1e1e1e;
+  --color-text: #ffffff;
+  --color-accent: #bb86fc;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-primary text-text;
+    background-image: url("/res/Designer.jpeg");
+    background-size: auto;
+    background-repeat: repeat;
+  }
+  *,
+  *:focus {
+    outline: none;
+  }
+
+  .form {
+    width: 500px;
+    margin: 0 auto;
+    font-family: sans-serif;
+    background: #fff;
+  }
+  .form-item {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  .form-item input,
+  .form-item textarea {
+    display: block;
+    width: 400px;
+    height: 40px;
+    background: transparent;
+    border: solid 1px #ccc;
+    transition: all 0.3s ease;
+    padding: 0 15px;
+  }
+  .form-item input:focus,
+  .form-item textarea:focus {
+    border-color: #bb86fc;
+  }
+  .form-item label {
+    position: absolute;
+    cursor: text;
+    z-index: 2;
+    top: 28px;
+    font-size: 12px;
+    font-weight: bold;
+    background: #1e1e1e;
+    pointer-events: none;
+    margin-left: 12px;
+    color: #999;
+    transition: all 0.3s ease;
+  }
+  .form-item input:valid + label,
+  .form-item input:focus + label,
+  .form-item textarea:valid + label,
+  .form-item textarea:focus + label {
+    font-size: 11px;
+    top: -4px;
+  }
+  .form-item input:focus + label,
+  .form-item textarea:focus + label {
+    color: #bb86fc;
+  }
+}

@@ -1,42 +1,42 @@
-
-
 function SideBar() {
-  const clickHandler = (event)=>{
-    const actionType = event.target.dataset.action;
-    switch (actionType) {
+  const clickHandler = (e) => {
+    const action = e.target.dataset.action;
+    console.log(action);
+    switch (action) {
       case "gitHub":
-        window.open("https://github.com/", "_blank");
-        break;
-      case "twitter":
-        window.open("https://twitter.com/", "_blank");
-        break;
-      case "instagram":
-        window.open("https://instagram.com/", "_blank");
+        window.open(`https://github.com/Nate-Teka`, "_blank");
         break;
       case "linkedIn":
-        window.open("https://linkedIn.com/", "_blank");
+        window.open(`https://www.linkedin.com/in/nathaniel-tekalgn-622031366/`, "_blank");
+        break;
+      case "twitter":
+        window.open(`https://x.com/Nate2031`, "_blank");
+        break;
+      case "instagram":
+        window.open(`https://www.instagram.com/itanwgg/`, "_blank");
+        break;
+      
+      default:
+        console.log(action);
         break;
     }
-  }
+    
+  };
+
   return (
-    <>
-      <div className="side-bar">
-        <ul className="side-bar__option-container">
-          <li className="side-bar__option-container__item">
-            <i data-action="gitHub" id="fa-github" className="fa-brands fa-github fa-2x" onClick={clickHandler} ></i>
+    <div className="absolute left-0 top-1/2 hidden md:block">
+      <ul className="bg-white py-4 px-2 rounded-r-xl">
+        {["github", "linkedin", "twitter", "instagram"].map((social) => (
+          <li key={social} className="group">
+            <i 
+              data-action={social === "github" ? "gitHub" : social === "linkedin" ? "linkedIn" : social}
+              className={`fa-brands fa-${social} fa-2x m-2 text-black transition-all duration-150 group-hover:text-accent group-hover:text-[2.2em] cursor-pointer`}
+              onClick={clickHandler}
+            ></i>
           </li>
-          <li className="side-bar__option-container__item">
-            <i data-action="linkedIn" id="fa-linkedin" className="fa-brands fa-linkedin fa-2x" onClick={clickHandler}></i>
-          </li>
-          <li className="side-bar__option-container__item">
-            <i data-action="twitter" id="fa-twitter" className="fa-brands fa-twitter fa-2x" onClick={clickHandler}></i>
-          </li>
-          <li className="side-bar__option-container__item">
-            <i data-action="instagram" id="fa-instagram" className="fa-brands fa-instagram fa-2x" onClick={clickHandler}></i>
-          </li>
-        </ul>
-      </div>
-    </>
+        ))}
+      </ul>
+    </div>
   );
 }
 export default SideBar;

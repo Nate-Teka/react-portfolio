@@ -171,30 +171,8 @@ a {
   padding: 0.5rem;
   margin: 1rem;
   border-radius: 0.5rem;
-  background-color: rgb(124, 189, 250);
-  color: black;
-}
-@media (max-width: 768px) {
-  .main-section .about-section__main-container {
-    flex-direction: column;
-    row-gap: 15%;
-  }
-  .main-section .about-section__main-container .about-section__header {
-    color: red;
-  }
-  .main-section .about-section__main-container h3 {
-    margin: 34px 0;
-  }
-  .main-section .about-section__main-container__skills-section__skills-list__item {
-    margin: 0;
-    margin-right: 34px;
-    margin-bottom: 34px;
-  }
-}
-@media (max-width: 768px) {
-  .main-section .about-section {
-    width: 90%;
-  }
+  background-color: #98D2C0;
+  color: white;
 }
 .main-section .side-bar {
   position: absolute;

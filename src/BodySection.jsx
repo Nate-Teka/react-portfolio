@@ -1,4 +1,3 @@
-
 import AboutSection from "./AboutSection"
 import WelcomeSection from "./WelcomeSection";
 import SideBar from "./SideBar";
@@ -7,7 +6,7 @@ import Footer from "./Footer";
 function Body() {
   return (
     <>
-    <main className="main-section">
+    <main className="main-section mx-auto w-[80%] ">
       <WelcomeSection />
       <AboutSection />
       <SideBar />
