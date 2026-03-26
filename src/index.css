@@ -63,8 +63,7 @@
   .form-item input:valid + label,
   .form-item input:focus + label,
   .form-item textarea:valid + label,
-  .form-item textarea:focus + label
-  {
+  .form-item textarea:focus + label {
     font-size: 11px;
     top: -4px;
   }

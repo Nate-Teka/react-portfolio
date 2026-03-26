@@ -1,14 +1,8 @@
 function Header() {
   return (
-    <header className="border-b border-accent rounded-b-2xl bg-secondary mx-auto md:w-[90%] ">
-      <nav className="flex justify-between items-center p-4 rounded-b-2xl md:rounded-none">
-        <div className="flex items-center gap-4">
-          <div className="w-10 h-10">
-            <img src="./placeholder.jpg" alt="Profile" className="w-full h-full rounded-full"/>
-          </div>
-          <p className="font-bold">N.T</p>
-        </div>
-        <ul className="flex items-center">
+    <header className=" rounded-b-2xl bg-secondary mx-auto w-fit ">
+      <nav className="flex justify-center p-6 rounded-b-2xl md:rounded-none">
+        <ul className="flex">
           {["about", "projects", "contact me"].map((item) => (
             <li key={item} className="mx-3 transition-all duration-150 ease-out hover:text-accent hover:cursor-pointer">
               <a href={`#${item.replace(' ', '')}Link`} className="capitalize">

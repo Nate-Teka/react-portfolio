@@ -1,22 +1,72 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 function ContactSection() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+  const [userInput, setUserInput] = useState({
+    fullName: "",
     email: "",
     subject: "",
     messageBox: "",
   });
 
-  const handleChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserInput({
+      ...userInput,
+      [name]: value,
+    });
+  };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("A test to work");
-    /* EmailJS logic remains same */
+
+    if (
+      !userInput.fullName ||
+      !userInput.email ||
+      !userInput.subject ||
+      !userInput.messageBox
+    ) {
+      toast.error("Please fill in all required fields.");
+      return;
+    } else {
+      console.log(userInput);
+    }
+
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    try {
+      const emailParams = {
+        fullName: userInput.fullName,
+        email: userInput.email,
+        subject: userInput.subject,
+        messageBox: userInput.messageBox,
+      };
+
+      const res = await emailjs.send(
+        serviceID, // serviceID
+        templateID, // templateID
+        emailParams, // templateParams
+        publicKey, // options (Your Public Key)
+      );
+
+      if (res.status === 200) {
+        toast.success("Message sent successfully!");
+        setUserInput({
+          fullName: "",
+          email: "",
+          subject: "",
+          messageBox: "",
+        });
+      }
+    } catch (error) {
+      toast.error("Failed to send message. Please try again later.");
+    }
+    console.log("Service:", serviceID);
+    console.log("Template:", templateID);
+    console.log("Public Key:", publicKey);
   };
 
   const inputClass =
@@ -30,7 +80,7 @@ function ContactSection() {
         onSubmit={handleSubmit}
         className="form flex flex-col self-center text-base bg-form rounded w-[80%]  bg-secondary pt-10 max-md:w-[95%]"
       >
-        {["Full name", "Email", "Subject"].map((field) => (
+        {["fullName", "email", "subject"].map((field) => (
           <div
             key={field}
             className="form-item flex flex-col px-8 mt-4 md:px-12 md:mt-0"
@@ -38,21 +88,31 @@ function ContactSection() {
             <input
               name={field}
               type={field === "email" ? "email" : "text"}
-              value={formData[field]}
+              value={userInput[field]}
               onChange={handleChange}
               className={`${inputClass} self-center`}
+              placeholder=" "
+              id={field}
               required
             />
-            <label htmlFor={field}>{field}</label>
+            <label htmlFor={field}>
+              {{
+                fullName: "Name",
+                email: "Email",
+                subject: "Subject",
+              }[field] || field}
+            </label>
           </div>
         ))}
 
         <div className="form-item flex flex-col px-8 md:px-12">
           <textarea
             name="messageBox"
-            value={formData.messageBox}
+            value={userInput.messageBox}
             onChange={handleChange}
             className={`${inputClass} h-64 resize-none self-center`}
+            placeholder=" "
+            id="messageBox"
             required
           ></textarea>
           <label htmlFor="messageBox">Message</label>
