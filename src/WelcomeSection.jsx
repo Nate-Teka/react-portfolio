@@ -1,4 +1,5 @@
 function WelcomeSection() {
+  //TODO: Make and add the nate logo.
   return (
     <section className="w-fit text-center mx-auto my-24 text-6xl ">
       <h2>
