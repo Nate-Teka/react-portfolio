@@ -78,7 +78,7 @@ function ContactSection() {
       </h3>
       <form
         onSubmit={handleSubmit}
-        className="form flex flex-col self-center text-base bg-form rounded w-[80%] max-w-150 bg-secondary pt-10 max-md:w-[95%]"
+        className="form flex flex-col self-center text-base bg-form rounded w-[80%] max-w-200 bg-secondary pt-10 max-md:w-[95%]"
       >
         {["fullName", "email", "subject"].map((field) => (
           <div
